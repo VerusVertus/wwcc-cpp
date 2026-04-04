@@ -1,0 +1,7 @@
+# Example .gitignore for C++
+*.o
+*.out
+*.exe
+*.obj
+build/
+debug/
