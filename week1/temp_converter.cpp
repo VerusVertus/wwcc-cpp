@@ -1,50 +1,47 @@
 /*
 Program Name: Temperature Converter
-Date created:
-Author:
-Purpose:
+Date created: 20260405
+Author: Trevor Moses
+Purpose: To take inputted units and temperature reading and convert it to the other units. 
+Farenheit to Celcius and vice versa.
 
 */
 
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
-//Chapter 8.11 about user input.
+
 
 int main() {
     //Variable Section
-    string name;
-    string password;
+    char F_or_C;
+    double temp_input;
 
-    //Ask for user to input name.
-    cout << "Enter your name:";
-    cin >> name;
+    //Function to convert entered temperature.
+    void TempConvert(temp_input) {
+        double convertted_temp;
+        switch(F_or_C) {
+            case F:
+                cout << "Farhenheit? No, you get Celcius." << endl;
+                convertted_temp = (temp_input - 32) * 5/9; 
+                break;
+            case C:
+                cout << "Celcius? No, you get Farhenheit." << endl;
+                convertted_temp = (temp_input - 32) * 5/9 ;
+                break;
+            default:
+                cout << "You didn't enter what I wanted you to. The program is ruined!" << endl;
+                break;
+        }
+    }
 
-    //display welcome message with inputted name
-    cout << "I had a brother named " << name << "! Welcome to C++!" << endl;
+    //Ask for user to input what kind of temp.
+    cout << "What you want? (F)arhenheit or (C)elcius?";
+    cin >> F_or_C;
+    cin >> temp_input;
+    TempConvert(temp_input);
 
-    //Second prompt. How to make requirements for length/complexity?
-    cout << "Please enter a top secret password: ";
-    cin >> password;
-
-    cout << name << "! You should never enter your password in plain text." << endl;
-    cout << "Now I am going to violate security and display your password back to you." << endl;
-    cout << endl;
-    cout << password << " is what you entered. Go away now.";
 
     return 0;
 }
-
-
-/*
-NOTES:
-Book recoomends validating the input. How does one do that for a string?
-    if (cin.fail()) {
-            cout << "That was not text." << endl;
-            cout << "Please run program again." << endl;
-            return -1;
-    }
-
-Need to figure out how we know what to include at top.
-
-*/
