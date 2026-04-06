@@ -41,6 +41,8 @@ int main() {
     // Ask for user to input what kind of temp.
     cout << "What you want? (F)arhenheit or (C)elcius? ";
     cin >> F_or_C;
+
+    cout << "What is the temperature reading to convert?";
     cin >> temp_input;
 
     //what happens when the function and the main use the same variables? Do we really have to declare them twice?
