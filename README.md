@@ -7,6 +7,7 @@ Hello! My name is Trevor. I am currently learning C++ programming.
 ## My Background
 
 This is a lot of personal information to put in a public repository.
+I am a very private person.
 
 ## Why I'm Learning C++
 
@@ -18,8 +19,8 @@ The programming languages I am familiar with are:
 
 - .NET (PowerShell)
 - Javascript
-- Java
 - SQL
+- Java (First Programming class taken. Never finished)
 
 I have been programming for 0 years. I don't consider my use cases as programming.
 
