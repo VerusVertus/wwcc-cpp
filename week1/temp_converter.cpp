@@ -5,6 +5,9 @@ Author: Trevor Moses
 Purpose: To take inputted units and temperature reading and convert it to the other units.
 Fahrenheit to Celsius and vice versa.
 */
+
+//NOTE: I would want to do more input validation but I beleive this meets spec. To make sure the inputs are only valid entries before running the program. Nothing checks for numbers vs a string.
+
 #include <iostream>
 #include <cctype> //wanted the toupper. Acording to the internet I need this for it to work.
 using namespace std;
@@ -37,7 +40,7 @@ int main() {
 
     cout << "Is this (F)ahrenheit or (C)elsius? ";
     cin >> F_or_C;
-    F_or_C = toupper(F_or_C);
+    F_or_C = toupper(F_or_C); //added to allow lower case characters to be used.
 
     TempConvert(F_or_C, temp_input);
     return 0;
