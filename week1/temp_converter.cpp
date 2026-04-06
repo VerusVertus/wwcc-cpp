@@ -9,7 +9,7 @@ Farenheit to Celcius and vice versa.
 
 #include <iostream>
 #include <string>
-#include <cmath>
+//#include <cmath> Don't think i need this.
 using namespace std;
 
 
@@ -23,7 +23,7 @@ void TempConvert(char F_or_C, double temp_input) {
             cout << "Your temperature is now: " << convertted_temp << " C" << endl;
             break;
         case 'C':  // char literals need single quotes
-            cout << "Celcius? No, you get Farhenheit." << endl;
+            cout << "Celcius? No, you get Fahrenheit." << endl;
             convertted_temp = (temp_input * 9.0/5.0) + 32;  // Fixed: wrong formula was here
             cout << "Your temperature is now: " << convertted_temp << " F" << endl;
             break;
@@ -38,12 +38,15 @@ int main() {
     char F_or_C;
     double temp_input;
 
+
+    cout << "What is the temperature you wish to convert?";
+    cin >> temp_input;
+
     // Ask for user to input what kind of temp.
-    cout << "What you want? (F)arhenheit or (C)elcius? ";
+    cout << "Is this (F)ahrenheit or (C)elcius? ";
     cin >> F_or_C;
 
-    cout << "What is the temperature reading to convert?";
-    cin >> temp_input;
+
 
     //what happens when the function and the main use the same variables? Do we really have to declare them twice?
     TempConvert(F_or_C, temp_input);
