@@ -1,3 +1,7 @@
+/*
+Added author file notes.
+*/
+
 #include <iostream>
 #include <cstdio>   // For printf
 using namespace std;
