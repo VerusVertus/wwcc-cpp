@@ -5,3 +5,5 @@ int main() {
     cout << "This program was compiled using a Makefile and hope." << endl;
     return 0;
 }
+
+//I like this. Makes compiling so much easier. 
