@@ -14,5 +14,7 @@ $(TARGET): $(SRCS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
  
 # Clean rule to remove compiled files
+# echo is showing the command. Is there a way to hide it? I'll have to find out bash command.
 clean:
 	rm -f $(TARGET)
+	echo "Cleaned up $(TARGET)"
