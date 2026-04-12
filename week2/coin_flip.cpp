@@ -28,19 +28,19 @@ int main() {
     int tails = 0;
     int flips_done = 0;
     */
-    //[0] = flips, [1] = flips_done, [2] = heads, [3] = tails
-    int coinStats[4] = {0, 0, 0, 0};
+    //[0] = numFlips, [1] = flips_done, [2] = heads, [3] = tails
+    int coinStats[4] = {0,0,0,0};
     char result;
 
-    cout << "Coin Flip Simulator" << endl;
+    cout << "Coin Flip Simulator. 100%% improved!" << endl;
     cout << "How many flips would you like to simulate? ";
-    cin >> flips;
+    cin >> coinStats[0];
 
   do  {
     //Figure our how to specify characters.
-    result = rand()
+    result = rand();
 
-    switch (result))
+    switch (result)
     {
     case h:
         /* code */
@@ -49,12 +49,12 @@ int main() {
         /* code */
         break;
     }
-  } while (flips_done < flips);
+  } while (coinStats[1] < coinStats[0]);
   
   
   //Here we put the text ourside the switch statement.
-  cout << "heads" << heads << endl;
-  cout << "tails" << tails << endl;
+  cout << "heads" << coinStats[2] << endl;
+  cout << "tails" << coinStats[3] << endl;
 
 
     return 0;
