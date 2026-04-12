@@ -16,9 +16,6 @@ int main() {
     char char_value = 'X';
     const char* string_value = "Hello, World!";
 
-    printf("Format Specifier Practice\n");
-    printf("------------------------\n\n");
-
     // --- Format Specifier Practice ---
     printf("Format Specifier Practice\n");
     printf("------------------------\n\n");
@@ -27,22 +24,28 @@ int main() {
     
     //Format SpecifiersSection
     //Basic integer
-    printf("       %d\n", integer_value);
- 
+    printf("%d\n", integer_value);
+    printf("\n");
+
     //Hexadecimal
-    printf("           %x\n", integer_value);
- 
+    printf("%x\n", integer_value);
+    printf("/n");
+
     //Float
-    printf("         %f\n", float_value);
+    printf("%f\n", float_value);
+    printf("\n");
  
     //Scientific notation
-    printf("    %e\n", double_value);
+    printf("%e\n", double_value);
+    printf("\n");
  
     //Single character
-    printf("      %c\n", char_value);
+    printf("%c\n", char_value);
+    printf("\n");
  
     //String
-    printf("        %s\n\n", string_value);
+    printf("%s\n\n", string_value);
+    printf("\n");
  
     //Width + Precision Section
 
