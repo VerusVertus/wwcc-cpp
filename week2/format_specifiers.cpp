@@ -26,17 +26,22 @@ int main() {
     printf("Width:  |%8d|\n",  integer_value);
     printf("Left:   |%-8d|\n", integer_value);
     printf("ZeroPad:    |%08d|\n\n", integer_value);
+
     //Hex
     printf("Hex:    %x\n",   integer_value);
     printf("Hex+Precision:      %#x\n\n", integer_value);
+
     //Float
     printf("Float:  %f\n",    float_value);
     printf("Precision:  %.2f\n",  float_value);
     printf("Width+Precision:    |%14.6f|\n\n", float_value);
+
     //Scientic Notation
     printf("Scientific: %e\n\n",  double_value);
+
     //Char
     printf("Char:   %c\n\n",  char_value);
+    
     //String
     printf("String: %s\n",    string_value);
     printf("Width:  |%20s|\n", string_value);
