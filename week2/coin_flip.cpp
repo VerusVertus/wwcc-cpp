@@ -37,15 +37,20 @@ int main() {
     cin >> coinStats[0];
 
   do  {
-    //Figure our how to specify characters.
-    result = rand();
+    /*Figure our how to specify characters.
+    Operators? we are using the %. Maybe another operated like in the nested examples in the lesson.
+    */
+
+    //Hint provided: rand() % 2
+    //cplusplus.com/reference/cstdlib/rand/
+    result = rand() % 1 + 0 ;
 
     switch (result)
     {
-    case h:
+    case 0:
         /* code */
         break;
-    case t:
+    case 1:
         /* code */
         break;
     }
