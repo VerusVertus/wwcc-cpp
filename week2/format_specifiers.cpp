@@ -20,35 +20,33 @@ int main() {
     printf("Format Specifier Practice\n");
     printf("------------------------\n\n");
  
-    //%% acts like an escape character
-    
-    //Format Specifiers Section
-    //Basic integer
-    printf(" %d\n", integer_value);
-    printf("\n");
-
-    //Hexadecimal
-    printf("  %x\n", integer_value);
-    printf("\n");
-
+    //Format Specifiers with precision
+    //Integer
+    printf("Integer:    %d\n",   integer_value);
+    printf("Width:  |%8d|\n",  integer_value);
+    printf("Left:   |%-8d|\n", integer_value);
+    printf("ZeroPad:    |%08d|\n\n", integer_value);
+    //Hex
+    printf("Hex:    %x\n",   integer_value);
+    printf("Hex+Precision:      %#x\n\n", integer_value);
     //Float
-    printf("   %f\n", float_value);
-    printf("\n");
- 
-    //Scientific notation
-    printf("    %e\n", double_value);
-    printf("\n");
- 
-    //Single character
-    printf("     %c\n", char_value);
-    printf("\n");
- 
+    printf("Float:  %f\n",    float_value);
+    printf("Precision:  %.2f\n",  float_value);
+    printf("Width+Precision:    |%14.6f|\n\n", float_value);
+    //Scientic Notation
+    printf("Scientific: %e\n\n",  double_value);
+    //Char
+    printf("Char:   %c\n\n",  char_value);
     //String
-    printf("      %s\n\n", string_value);
-    printf("\n");
- 
-    //Width + Precision Section
+    printf("String: %s\n",    string_value);
+    printf("Width:  |%20s|\n", string_value);
 
+    //Name Box for signature [Winking Emoticon]
+    printf("+----------+\n");
+    printf("|          |\n");
+    printf("|  %s  |\n", "Trevor");   // %s prints a string
+    printf("|          |\n");
+    printf("+----------+\n\n");
     
     return 0;
 }
