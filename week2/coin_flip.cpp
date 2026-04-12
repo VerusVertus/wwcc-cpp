@@ -21,21 +21,25 @@ using namespace std;
 int main() {
     srand(time(0));
 
+    /*
+    --Putting this in an array--
     int flips;
     int heads = 0;
     int tails = 0;
     int flips_done = 0;
+    */
+    //[0] = flips, [1] = flips_done, [2] = heads, [3] = tails
+    int coinStats[4] = {0, 0, 0, 0};
     char result;
 
     cout << "Coin Flip Simulator" << endl;
     cout << "How many flips would you like to simulate? ";
     cin >> flips;
 
-  do-while (flips_done < flips))
-  {
-    //Figure our how to specific characters.
+  do  {
+    //Figure our how to specify characters.
     result = rand()
-    
+
     switch (result))
     {
     case h:
@@ -45,12 +49,12 @@ int main() {
         /* code */
         break;
     }
-    
-  }
+  } while (flips_done < flips);
+  
   
   //Here we put the text ourside the switch statement.
   cout << "heads" << heads << endl;
-  count << "tails" << tails << endl;
+  cout << "tails" << tails << endl;
 
 
     return 0;
