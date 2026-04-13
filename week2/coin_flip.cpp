@@ -17,10 +17,17 @@ int main() {
     int coinStats[4] = {0,0,0,0};
     char result;
 
-    cout << "Coin Flip Simulator. 100% improved!" << endl;
-    cout << "How many flips would you like to simulate? ";
+    cout << "Coin Flip Simulator. 100% improved!\n";
+    cout << "How many flips would you like to simulate? \n";
     cin >> coinStats[0];
-    cout << "Simulating " << coinStats[0] << " flips..." << endl;
+
+    //validation to fit within int range. I tried it wil a larger number and it proke the percentages.
+    if (coinStats[0] <= 0 || coinStats[0] > 1000000000) {
+        cout << "Please enter a number between 1 and 1000000000\n";
+        return 1;
+    }
+
+    cout << "Simulating " << coinStats[0] << " flips...\n\n";
 
   do  {
 
@@ -39,8 +46,9 @@ int main() {
         }
   } while (coinStats[1] < coinStats[0]);
   
-  cout << "Heads: " << coinStats[2] << "(" << coinStats[2]*100/coinStats[0] << "%)" <<  endl;
-  cout << "Tails: " << coinStats[3]  << "(" << coinStats[3]*100/coinStats[0] << "%)" << endl;
+  cout << "Results\n";
+  cout << "Heads: " << coinStats[2] << "(" << coinStats[2]*100/coinStats[0] << "%)\n";
+  cout << "Tails: " << coinStats[3]  << "(" << coinStats[3]*100/coinStats[0] << "%\n";
 
 
     return 0;
@@ -52,4 +60,7 @@ int main() {
     cplusplus.com/reference/cstdlib/rand/
     plusplus.com/doc/tutorial/operators/
     Turn it into a true false and then assign character to it! what a work around.
+
+    Return 1 for error.
+    https://cplusplus.com/doc/tutorial/functions/
     */
