@@ -18,7 +18,7 @@ int main() {
     char result;
 
     cout << "Coin Flip Simulator. 100% improved!\n";
-    cout << "How many flips would you like to simulate? \n";
+    cout << "How many flips would you like to simulate?: ";
     cin >> coinStats[0];
 
     //validation to fit within int range. I tried it wil a larger number and it proke the percentages.
@@ -48,7 +48,7 @@ int main() {
   
   cout << "Results\n";
   cout << "Heads: " << coinStats[2] << "(" << coinStats[2]*100/coinStats[0] << "%)\n";
-  cout << "Tails: " << coinStats[3]  << "(" << coinStats[3]*100/coinStats[0] << "%\n";
+  cout << "Tails: " << coinStats[3]  << "(" << coinStats[3]*100/coinStats[0] << "%)\n";
 
 
     return 0;
