@@ -35,6 +35,7 @@ int main() {
     cout << "Coin Flip Simulator. 100%% improved!" << endl;
     cout << "How many flips would you like to simulate? ";
     cin >> coinStats[0];
+    cout << "Simpulating " << coinStats[0] << " flips..." << endl;
 
   do  {
     /*    
@@ -64,10 +65,8 @@ int main() {
     }
   } while (coinStats[1] < coinStats[0]);
   
-  
-  //Here we put the text ourside the switch statement.
-  cout << "heads" << coinStats[2] << endl;
-  cout << "tails" << coinStats[3] << endl;
+  cout << "heads" << coinStats[2] << "  (" << coinStats[2]*100/coinStats[0] << ")" <<  endl;
+  cout << "tails" << coinStats[3]  << "  (" << coinStats[3]*100/coinStats[0] << ")" << endl;
 
 
     return 0;
