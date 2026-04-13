@@ -3,11 +3,14 @@ Program:        Coin Flip Generator
 Date Created:   20260404
 Author:         Trevor Moses
 Purpose:        To complete Code Assignment 201.
+
+Validation nightmare! I am stopping before I go mad. 
 */
 
 #include <iostream>
 #include <cstdlib>  // For rand()
 #include <ctime>    // For time()
+#include <iomanip>  // For set precision. Percentages would not stay correct.
 using namespace std;
 
 int main() {
@@ -18,14 +21,17 @@ int main() {
     char result;
 
     cout << "Coin Flip Simulator. 100% improved!\n";
-    //validation to fit within int range. I tried it with a larger number and it broke the percentages. Did not want to use long long as the starter code defines using int.
-    //Had just a while statement and that had no break. replace with a do-until (do-while).
+
     do {
-        cout << "How many flips would you like to simulate?: ";
-        cin >> coinStats[0];
-        if (coinStats[0] <= 0 || coinStats[0] > 1000000000)
-            cout << "Please enter a number between 1 and 1,000,000,000\n";
-    } while (coinStats[0] <= 0 || coinStats[0] > 1000000000);
+    cout << "How many flips would you like to simulate?: ";
+    if (!(cin >> coinStats[0])) {
+        cin.clear();                // clear error flag
+        cin.ignore(10000, '\n');    // discard bad input
+        coinStats[0] = -1;         // force back into loop
+    }
+    if (coinStats[0] <= 0 || coinStats[0] > 1000000000)
+        cout << "Please enter a number between 1 and 1,000,000,000\n\n[------------Restarting------------]\n\n";
+} while (coinStats[0] <= 0 || coinStats[0] > 1000000000);
 
     cout << "Simulating " << coinStats[0] << " flips...\n\n";
 
@@ -47,8 +53,9 @@ int main() {
   } while (coinStats[1] < coinStats[0]);
   
   cout << "Results\n";
-  cout << "Heads: " << coinStats[2] << " (" << coinStats[2]*100.00/coinStats[0] << "%)\n";
-  cout << "Tails: " << coinStats[3]  << " (" << coinStats[3]*100.00/coinStats[0] << "%)\n";
+  cout << fixed << setprecision(2);
+  cout << "Heads: " << coinStats[2] << " (" << coinStats[2]*100.0/coinStats[0] << "%)\n";
+  cout << "Tails: " << coinStats[3]  << " (" << coinStats[3]*100.0/coinStats[0] << "%)\n";
 
 
     return 0;
@@ -56,11 +63,20 @@ int main() {
 
     /*
     NOTES SECTION:
+    --AI Disclaimer--
+    AI tools were used to assist in debugging the input validation section of this program. 
+    Specifically, Claude (Anthropic) suggested the use of cin.clear() and cin.ignore() to 
+    handle invalid input that caused an infinite loop in the do-while validation block.
+
     Hint provided: rand() % 2
     cplusplus.com/reference/cstdlib/rand/
     plusplus.com/doc/tutorial/operators/
     Turn it into a true false and then assign character to it! what a work around.
 
     Return 1 for error.
-    https://cplusplus.com/doc/tutorial/functions/
+    cplusplus.com/doc/tutorial/functions/
+
+    Precision reference
+    cplusplus.com/reference/iomanip/setprecision/
+
     */
