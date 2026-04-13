@@ -53,13 +53,13 @@ int main() {
 
     switch (result)
     {
-    case h:
-        coinStats[1]++
-        coinStats[2]++
+    case 'h':
+        coinStats[1]++;
+        coinStats[2]++;
         break;
-    case t:
-        coinStats[1]++
-        coinStats[3]++
+    case 't':
+        coinStats[1]++;
+        coinStats[3]++;
         break;
     }
   } while (coinStats[1] < coinStats[0]);
