@@ -32,10 +32,10 @@ int main() {
     int coinStats[4] = {0,0,0,0};
     char result;
 
-    cout << "Coin Flip Simulator. 100%% improved!" << endl;
+    cout << "Coin Flip Simulator. 100% improved!" << endl;
     cout << "How many flips would you like to simulate? ";
     cin >> coinStats[0];
-    cout << "Simpulating " << coinStats[0] << " flips..." << endl;
+    cout << "Simulating " << coinStats[0] << " flips..." << endl;
 
   do  {
     /*    
@@ -65,8 +65,8 @@ int main() {
     }
   } while (coinStats[1] < coinStats[0]);
   
-  cout << "heads" << coinStats[2] << "  (" << coinStats[2]*100/coinStats[0] << ")" <<  endl;
-  cout << "tails" << coinStats[3]  << "  (" << coinStats[3]*100/coinStats[0] << ")" << endl;
+  cout << "Heads: " << coinStats[2] << "(" << coinStats[2]*100/coinStats[0] << "%)" <<  endl;
+  cout << "Tails: " << coinStats[3]  << "(" << coinStats[3]*100/coinStats[0] << "%)" << endl;
 
 
     return 0;
