@@ -37,25 +37,29 @@ int main() {
     cin >> coinStats[0];
 
   do  {
-    /*Figure our how to specify characters.
-    Operators? we are using the %. Maybe another operated like in the nested examples in the lesson.
-    */
-
-    //Hint provided: rand() % 2
-    //cplusplus.com/reference/cstdlib/rand/
-    result = rand() % 2 ;
-    /*
+    /*    
     condition ? valueIfTrue : valueIfFalse
     int max = (a > b) ? a : b;  // max will be 20
-    rand() % 2 ? h : t; ?
     */
+
+    /*
+    Hint provided: rand() % 2
+    cplusplus.com/reference/cstdlib/rand/
+    plusplus.com/doc/tutorial/operators/
+    Turn it into a true false and then assign character to it! what a work around.
+    */
+
+    result = rand() % 2 == 0 ? 'h' : 't';
+
     switch (result)
     {
-    case 0:
-        /* code */
+    case h:
+        coinStats[1]++
+        coinStats[2]++
         break;
-    case 1:
-        /* code */
+    case t:
+        coinStats[1]++
+        coinStats[3]++
         break;
     }
   } while (coinStats[1] < coinStats[0]);
