@@ -43,8 +43,12 @@ int main() {
 
     //Hint provided: rand() % 2
     //cplusplus.com/reference/cstdlib/rand/
-    result = rand() % 1 + 0 ;
-
+    result = rand() % 2 ;
+    /*
+    condition ? valueIfTrue : valueIfFalse
+    int max = (a > b) ? a : b;  // max will be 20
+    rand() % 2 ? h : t; ?
+    */
     switch (result)
     {
     case 0:
