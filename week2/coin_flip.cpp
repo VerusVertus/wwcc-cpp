@@ -13,19 +13,19 @@ using namespace std;
 int main() {
     srand(time(0));
 
-    //[0] = numFlips, [1] = flips_done, [2] = heads, [3] = tails
+    //[0] = Number of flips requested, [1] = count of flips done, [2] = count of heads, [3] = count of tails
     int coinStats[4] = {0,0,0,0};
     char result;
 
     cout << "Coin Flip Simulator. 100% improved!\n";
-    cout << "How many flips would you like to simulate?: ";
-    cin >> coinStats[0];
-
-    //validation to fit within int range. I tried it wil a larger number and it proke the percentages.
-    if (coinStats[0] <= 0 || coinStats[0] > 1000000000) {
-        cout << "Please enter a number between 1 and 1000000000\n";
-        return 1;
-    }
+    //validation to fit within int range. I tried it with a larger number and it broke the percentages. Did not want to use long long as the starter code defines using int.
+    //Had just a while statement and that had no break. replace with a do-until (do-while).
+    do {
+        cout << "How many flips would you like to simulate?: ";
+        cin >> coinStats[0];
+        if (coinStats[0] <= 0 || coinStats[0] > 1000000000)
+            cout << "Please enter a number between 1 and 1,000,000,000\n";
+    } while (coinStats[0] <= 0 || coinStats[0] > 1000000000);
 
     cout << "Simulating " << coinStats[0] << " flips...\n\n";
 
@@ -47,8 +47,8 @@ int main() {
   } while (coinStats[1] < coinStats[0]);
   
   cout << "Results\n";
-  cout << "Heads: " << coinStats[2] << "(" << coinStats[2]*100/coinStats[0] << "%)\n";
-  cout << "Tails: " << coinStats[3]  << "(" << coinStats[3]*100/coinStats[0] << "%)\n";
+  cout << "Heads: " << coinStats[2] << " (" << coinStats[2]*100.00/coinStats[0] << "%)\n";
+  cout << "Tails: " << coinStats[3]  << " (" << coinStats[3]*100.00/coinStats[0] << "%)\n";
 
 
     return 0;
