@@ -29,7 +29,16 @@ int main() {
     cout << "Number Guessing Game\n";
     cout << "I'm thinking of a number between 1 and 100.\n\n";
 
-    // Your code here
+    do {
+        cout << "Number Guessing Game\nI'm thinking of a number between 1 and 100.\n\nEnter your guess: ";
+        if (!(cin >> coinStats[0])) {
+            cin.clear();                // clear error flag
+            cin.ignore(10000, '\n');    // discard bad input
+            coinStats[0] = -1;         // force back into loop
+        }
+        if (coinStats[0] <= 0 || coinStats[0] > 1000000000)
+            cout << "Please enter a number between 1 and 1,000,000,000\n\n[------------Restarting------------]\n\n";
+    } while (guess != secretNumber);
 
     return 0;
 }
