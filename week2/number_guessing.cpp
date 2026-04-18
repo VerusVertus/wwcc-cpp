@@ -45,7 +45,8 @@ int main() {
                            "Your answer, for a million secret points.....is CORRECT! The number was "
 
                     };
-
+    
+    //cpp manuel says size is the modern way to use sizeof.
     int tooLowSize = std::size(tooLow);
     int tooHighSize = std::size(tooHigh);
     int justRightSize = std::size(justRight);
@@ -71,12 +72,13 @@ int main() {
         attempts++;
 
         if (guess < secretNumber)
-            cout << "Too low! Try again.\n\n";
+            cout << tooLow[rand() % tooLowSize] << "\n";
         else if (guess > secretNumber)
-            cout << "Too high! Try again.\n\n";
+            cout << tooHigh[rand() % tooHighSize] << "\n";
 
     } while (guess != secretNumber);
 
+    justRight
 
     return 0;
 }
