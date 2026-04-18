@@ -27,7 +27,7 @@ int main() {
     int attempts = 0;
 
 
-    //Responses Section. 
+    //Responses Section. Wanted more than the "cookie cutter" responses.
     string tooLow[] = { "Were you looking for the ground? Well, you need to go higher\n",
                         "Icarus aimed for the sun, you should look further up too\n",
                         "Wrong. Are you trying to match your high schools GPA? Increase your guess\n",
@@ -47,9 +47,9 @@ int main() {
                     };
     
     //cpp manuel says size is the modern way to use sizeof.
-    int tooLowSize = std::size(tooLow);
-    int tooHighSize = std::size(tooHigh);
-    int justRightSize = std::size(justRight);
+    int tooLowSize = size(tooLow);
+    int tooHighSize = size(tooHigh);
+    int justRightSize = size(justRight);
 
     cout << "Number Guessing Game\n";
     cout << "I'm thinking of a number between 1 and 100.\n\n";
@@ -78,7 +78,8 @@ int main() {
 
     } while (guess != secretNumber);
 
-    justRight
+    cout << justRight[rand() % justRightSize] << secretNumber
+         << "! It took you " << attempts << " guess(es)!\n";
 
     return 0;
 }
