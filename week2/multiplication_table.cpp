@@ -14,7 +14,8 @@ Include row and column headers showing the numbers being multiplied
 */
 
 #include <iostream>
-#include <iomanip>  // For setw()
+#include <iomanip>
+#include <string>
 using namespace std;
 
 int main() {
@@ -35,28 +36,26 @@ int main() {
 
     cout << "\n";
 
-    // Calculate width based on the largest possible product
-    int maxProduct = end * end;
-    int width = to_string(maxProduct).length() + 1; 
+    int width = to_string(end * end).length() + 1;
 
     // Print header row
-    cout << setw(width) << " " << "|";
+    cout << setw(width) << " " << " |";
     for (int col = start; col <= end; col++) {
-        cout << setw(width - 1) << col << " |";
+        cout << setw(width) << col << " |";
     }
     cout << "\n";
 
     // Print separator row
     for (int col = start; col <= end + 1; col++) {
-        cout << string(width, '-') << "|";
+        cout << string(width + 1, '-') << "|";
     }
     cout << "\n";
 
     // Print table body
     for (int row = start; row <= end; row++) {
-        cout << setw(width - 1) << row << " |";
+        cout << setw(width) << row << " |";
         for (int col = start; col <= end; col++) {
-            cout << setw(width - 1) << row * col << " |";
+            cout << setw(width) << row * col << " |";
         }
         cout << "\n";
     }
