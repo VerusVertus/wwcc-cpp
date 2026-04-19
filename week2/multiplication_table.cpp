@@ -35,15 +35,31 @@ int main() {
 
     cout << "\n";
 
-    //Need to deterimne size for max table size.
+    // Calculate width based on the largest possible product
+    int maxProduct = end * end;
+    int width = to_string(maxProduct).length() + 1; 
 
+    // Print header row
+    cout << setw(width) << " " << "|";
+    for (int col = start; col <= end; col++) {
+        cout << setw(width - 1) << col << " |";
+    }
+    cout << "\n";
 
-    //Print X values
+    // Print separator row
+    for (int col = start; col <= end + 1; col++) {
+        cout << string(width, '-') << "|";
+    }
+    cout << "\n";
 
-
-    //Print Y values
-
-    //fill table
+    // Print table body
+    for (int row = start; row <= end; row++) {
+        cout << setw(width - 1) << row << " |";
+        for (int col = start; col <= end; col++) {
+            cout << setw(width - 1) << row * col << " |";
+        }
+        cout << "\n";
+    }
 
     return 0;
 }
