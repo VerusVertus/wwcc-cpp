@@ -7,13 +7,13 @@ Purpose:        Practice string operations by building a tool that processes and
 
 #include <iostream>   // cout, cin
 #include <string>     // string, getline
-#include <sstream>    // stringstream (for splitting text into words)
-#include <iomanip>    // fixed, setprecision (for one-decimal-place output)
+#include <sstream>    // stringstream
+#include <iomanip>    // fixed, setprecision
 #include <cctype>     // toupper, tolower, ispunct
 using namespace std;
 
 
-//count characters including spaces
+//count characters function (including spaces)
 int countWords(string text) {
     stringstream ss(text);
     string word;
@@ -24,7 +24,7 @@ int countWords(string text) {
     return count;
 }
 
-//function to remove punctuation
+//function to remove punctuation function
 string stripPunctuation(string word) {
     string clean = "";
     for (char c : word) {
@@ -50,7 +50,7 @@ double averageWordLength(string text) {
 }
 
 
-//count sentences (count by . ? ! )
+//count sentences function (count by . ? ! )
 int numSentences(string text) {
     int count = 0;
     for (char c : text) {
@@ -62,19 +62,19 @@ int numSentences(string text) {
 }
 
 
-//show longest word
+//show longest word function.
 string longestWord(string text) {
     stringstream ss(text);
     string word;
     string longest = "";
     while (ss >> word) {
+        word = stripPunctuation(word);          // <-- add this line
         if (word.length() > longest.length()) {
             longest = word;
         }
     }
     return longest;
 }
-
 
 //change case function
 string changeCase(string text, char mode) {
@@ -88,7 +88,7 @@ string changeCase(string text, char mode) {
     return text;
 }
 
-//display function
+//display function --- Declare last as it calls all functions above it.
 void createDisplay(string text) {
     cout << "\nAnalysis:\n";
     cout << "  Characters (with spaces): " << text.length() << "\n";
@@ -101,9 +101,6 @@ void createDisplay(string text) {
     cout << "\nUppercase:\n  " << changeCase(text, 'u') << "\n";
     cout << "\nLowercase:\n  " << changeCase(text, 'l') << "\n";
 }
-
-
-
 
 
 
