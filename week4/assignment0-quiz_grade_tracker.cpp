@@ -119,3 +119,4 @@ int main() {
                   countA, countB, countC, countD, countF);
  
     return 0;
+    }
