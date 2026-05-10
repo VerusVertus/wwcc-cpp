@@ -14,23 +14,11 @@ const int NUM_QUIZZES = 5;
 
 //function for letter grade. 
 char getLetterGrade(double score) {
-    switch (score) {
-        case >= 90:
-            return 'A';
-            break;
-        case >= 80:
-            return 'B';
-            break;
-        case >= 70:
-            return 'C';
-            break;
-        case >= 60:
-            return 'D';
-            break;
-        default:
-            return 'F';
-            break;
-    }
+    if (score >= 90) return 'A';
+    if (score >= 80) return 'B';
+    if (score >= 70) return 'C';
+    if (score >= 60) return 'D';
+    return 'F';
 }
 
 //function to create the display
@@ -54,7 +42,7 @@ void displayReport(const double scores[], double average,
     cout << "  Average Score: " << average << " (" << getLetterGrade(average) << ")\n";
     cout << "  Highest Score: " << highest << " on Quiz " << (highestIndex + 1) << "\n";
     cout << "  Lowest Score:  " << lowest << " on Quiz " << (lowestIndex + 1) << "\n";
- 
+    cout << "  Overall Course Grade: " << getLetterGrade(average) << "\n";
     cout << "\nGrade Distribution:\n";
     cout << "  A: " << countA << "\n";
     cout << "  B: " << countB << "\n";
@@ -62,7 +50,7 @@ void displayReport(const double scores[], double average,
     cout << "  D: " << countD << "\n";
     cout << "  F: " << countF << "\n";
  
-    cout << "\nOverall Course Grade: " << getLetterGrade(average) << "\n";
+   
 }
 
 //funtion to read inputted quiz scores
@@ -100,12 +88,6 @@ getLetterGrade(scores);
 double average = sum / NUM_QUIZZES;
 
 
-
-
-//Calculate letter grade. use helper function above
-
-
-
 //make display section
     /* Call displayReport with arguments in this order:
     1. scores         - the array of quiz scores
@@ -120,7 +102,10 @@ double average = sum / NUM_QUIZZES;
     10. countD        - number of D grades
     11. countF        - number of F grades */
 
-displayReport(Input all variables);
+    displayReport(scores, average, highest, highestIndex,
+                  lowest, lowestIndex,
+                  countA, countB, countC, countD, countF);
+
 
 
 
