@@ -24,23 +24,57 @@ int countWords(string text) {
     return count;
 }
 
-//Would number of words (break by spaces)
-//function
-
-//count sentences (count by . ? ! that are followed by a space?)
-string numSentences(string text) {
-
+//function to remove punctuation
+string stripPunctuation(string word) {
+    string clean = "";
+    for (char c : word) {
+        if (!ispunct(c)) {
+            clean += c;
+        }
+    }
+    return clean;
 }
+
+
+//word averages function
+double averageWordLength(string text) {
+    stringstream ss(text);
+    string word;
+    int totalLetters = 0;
+    int wordCount = 0;
+    while (ss >> word) {
+        totalLetters += stripPunctuation(word).length();
+        wordCount++;
+    }
+    return (double)totalLetters / wordCount;
+}
+
+
+//count sentences (count by . ? ! )
+int numSentences(string text) {
+    int count = 0;
+    for (char c : text) {
+        if (c == '.' || c == '!' || c == '?') {
+            count++;
+        }
+    }
+    return count;
+}
+
 
 //show longest word
 string longestWord(string text) {
-
+    stringstream ss(text);
+    string word;
+    string longest = "";
+    while (ss >> word) {
+        if (word.length() > longest.length()) {
+            longest = word;
+        }
+    }
+    return longest;
 }
 
-//show average word length
-
-//shows entire sentence in all uppercase
-//function or incoke inline?
 
 //change case function
 string changeCase(string text, char mode) {
@@ -54,9 +88,35 @@ string changeCase(string text, char mode) {
     return text;
 }
 
+//display function
+void createDisplay(string text) {
+    cout << "\nAnalysis:\n";
+    cout << "  Characters (with spaces): " << text.length() << "\n";
+    cout << "  Word count:               " << countWords(text) << "\n";
+    cout << "  Sentence count:           " << numSentences(text) << "\n";
+    cout << "  Longest word:             " << longestWord(text) << "\n";
+    cout << "  Average word length:      " << fixed << setprecision(1)
+         << averageWordLength(text) << " characters\n";
+ 
+    cout << "\nUppercase:\n  " << changeCase(text, 'u') << "\n";
+    cout << "\nLowercase:\n  " << changeCase(text, 'l') << "\n";
+}
+
+
+
+
+
 
 int main() {
 
+    cout << "TEXT ANALYZER";
+    cout << "\n-------------\n";
+    cout << "Enter a sentence or paragraph:\n";
+ 
+    string text;
+    getline(cin, text);
+ 
+    createDisplay(text);
 
 
 
