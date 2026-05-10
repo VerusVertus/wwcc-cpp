@@ -107,6 +107,19 @@ double average = sum / NUM_QUIZZES;
 
 
 //make display section
+    /* Call displayReport with arguments in this order:
+    1. scores         - the array of quiz scores
+    2. average        - the calculated average score
+    3. highest        - the highest score value
+    4. highestIndex   - index (0-4) of the highest score
+    5. lowest         - the lowest score value
+    6. lowestIndex    - index (0-4) of the lowest score
+    7. countA         - number of A grades
+    8. countB         - number of B grades
+    9. countC         - number of C grades
+    10. countD        - number of D grades
+    11. countF        - number of F grades */
+
 displayReport(Input all variables);
 
 
